@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include "mysorting.h"
-#define MAX 1000000
-#define StringMax 100
 int main() {
     int NumData[MAX];
     char StringData[MAX][StringMax];
@@ -20,8 +18,8 @@ int main() {
         fprintf(fp1,"%d\n",NumData[i]);
     }
     for(int i = 0 ; i < MAX ; i++){
-        flag = rand();
         for(int j = 0 ; j < StringMax-1 ; j++){
+            flag = rand();
             if(flag %2 == 1)
                 StringData[i][j] = 'a' + rand()%26;
             else
@@ -30,7 +28,6 @@ int main() {
         StringData[i][StringMax-1] = '\0';
         fprintf(fp2,"%s\n",StringData[i]);
     }
-
 
     struct timeval begin,end;
     unsigned long different;
@@ -44,14 +41,13 @@ int main() {
     gettimeofday(&end,NULL);
     different = 1000000 * (end.tv_sec - begin.tv_sec) + end.tv_usec - begin.tv_usec;
     printf("QuickSort Time for string is %f \n",(float)different/1000000);
-
     printf("generate random int and string\n");
     srand(1);
     for(int i = 0 ; i < MAX ; i++)
         NumData[i] = rand();
     for(int i = 0 ; i < MAX ; i++){
-        flag = rand();
         for(int j = 0 ; j < StringMax-1 ; j++){
+            flag = rand();
             if(flag %2 == 1)
                 StringData[i][j] = 'a' + rand()%26;
             else
@@ -59,8 +55,6 @@ int main() {
         }
         StringData[i][StringMax-1] = '\0';
     }
-
-
     gettimeofday(&begin,NULL);
     myMergeSort(NumData,0,MAX-1);
     gettimeofday(&end,NULL);
@@ -73,14 +67,13 @@ int main() {
     printf("MergeSort Time for string is %f \n",(float)different/1000000);
 
 
-
     printf("generate random int and string\n");
     srand(1);
     for(int i = 0 ; i < MAX ; i++)
         NumData[i] = rand();
     for(int i = 0 ; i < MAX ; i++){
-        flag = rand();
         for(int j = 0 ; j < StringMax-1 ; j++){
+            flag = rand();
             if(flag %2 == 1)
                 StringData[i][j] = 'a' + rand()%26;
             else
@@ -88,7 +81,6 @@ int main() {
         }
         StringData[i][StringMax-1] = '\0';
     }
-
 
     gettimeofday(&begin,NULL);
     myHeapSort(NumData,MAX);
