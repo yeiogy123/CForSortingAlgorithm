@@ -34,8 +34,8 @@ void myStringQuickSort(char data[][StringMax], int front, int last){
             do{j--;}
             while(strcmp(data[j],pivot) > 0);
             if(i < j){
-                strcpy(temp,data[i]);
-                strcpy(data[i],data[j]);
+                strcpy(temp,data[front]);
+                strcpy(data[front],data[j]);
                 strcpy(data[j],temp);
             }
         }while(i < j);
