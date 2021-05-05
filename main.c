@@ -12,7 +12,7 @@ int main() {
     const char StringFile[] = "dataset2.txt";
     fp1 = fopen(NumFile,"w");
     fp2 = fopen(StringFile,"w");
-
+    int flag;
     printf("generate random int and string\n");
     srand(1);
     for(int i = 0 ; i < MAX ; i++){
@@ -20,8 +20,12 @@ int main() {
         fprintf(fp1,"%d\n",NumData[i]);
     }
     for(int i = 0 ; i < MAX ; i++){
+        flag = rand();
         for(int j = 0 ; j < StringMax-1 ; j++){
-            StringData[i][j] = 'a' + rand()%26;
+            if(flag %2 == 1)
+                StringData[i][j] = 'a' + rand()%26;
+            else
+                StringData[i][j] = 'A' + rand()%26;
         }
         StringData[i][StringMax-1] = '\0';
         fprintf(fp2,"%s\n",StringData[i]);
@@ -46,8 +50,13 @@ int main() {
     for(int i = 0 ; i < MAX ; i++)
         NumData[i] = rand();
     for(int i = 0 ; i < MAX ; i++){
-        for(int j = 0 ; j < StringMax-1 ; j++)
-            StringData[i][j] = 'a' + rand()%26;
+        flag = rand();
+        for(int j = 0 ; j < StringMax-1 ; j++){
+            if(flag %2 == 1)
+                StringData[i][j] = 'a' + rand()%26;
+            else
+                StringData[i][j] = 'A' + rand()%26;
+        }
         StringData[i][StringMax-1] = '\0';
     }
 
@@ -70,8 +79,13 @@ int main() {
     for(int i = 0 ; i < MAX ; i++)
         NumData[i] = rand();
     for(int i = 0 ; i < MAX ; i++){
-        for(int j = 0 ; j < StringMax-1 ; j++)
-            StringData[i][j] = 'a' + rand()%26;
+        flag = rand();
+        for(int j = 0 ; j < StringMax-1 ; j++){
+            if(flag %2 == 1)
+                StringData[i][j] = 'a' + rand()%26;
+            else
+                StringData[i][j] = 'A' + rand()%26;
+        }
         StringData[i][StringMax-1] = '\0';
     }
 
