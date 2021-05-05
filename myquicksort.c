@@ -39,8 +39,8 @@ void myStringQuickSort(char data[][StringMax], int front, int last){
                 strcpy(data[j],temp);
             }
         }while(i < j);
-        strcpy(temp,data[i]);
-        strcpy(data[i],data[j]);
+        strcpy(temp,data[front]);
+        strcpy(data[front],data[j]);
         strcpy(data[j],temp);
         myStringQuickSort(data,front,j-1);
         myStringQuickSort(data,j+1,last);
