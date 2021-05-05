@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include "mysorting.h"
-#define MAX 100000
+#define MAX 1000000
 #define StringMax 100
 int main() {
     int NumData[MAX];
