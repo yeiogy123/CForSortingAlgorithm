@@ -5,6 +5,7 @@
 #ifndef PD_HW01_MYSORTING_H
 #define PD_HW01_MYSORTING_H
 #include <string.h>
+#define MAX 1000000
 #define StringMax 100
 #define SWAP(X,Y,T) ((T)=(X),(X)=(Y),(Y)=(T))
 void myQuickSort(int data[], int first, int last);
