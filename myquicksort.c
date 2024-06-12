@@ -10,7 +10,7 @@ void myQuickSort(int data[], int front, int last){
         j = last + 1;
         do{
             do{i++;}
-            while(data[i] < pivot);
+            while(i <= last && data[i] < pivot);
             do{j--;}
             while(data[j] > pivot);
             if(i < j)
